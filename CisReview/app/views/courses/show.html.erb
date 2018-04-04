@@ -17,7 +17,11 @@
 
 <p>
   <strong>Instructor:</strong>
-  <%= @course.instructor.first_name + " " + @course.instructor.last_name %>
+  <%if @course.instructor  %>
+  <%=	@course.instructor.first_name + " " + @course.instructor.last_name %>
+  <% else %>
+  <%= "NOT YET AVAILABLE" %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
