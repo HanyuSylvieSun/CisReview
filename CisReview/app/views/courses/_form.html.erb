@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :instructor_id %>
-    <%= form.text_field :instructor_id, id: :course_instructor_id %>
+    <%= form.collection_select(:instructor_id, Instructor.all, :id, :last_name, :include_blank => '--None--') %>
   </div>
 
   <div class="actions">
