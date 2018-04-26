@@ -7,7 +7,7 @@ class Instructor < ApplicationRecord
 	validates :last_name, presence: true
 
 	validate :f_capitalize
-    validate :l_capitalize
+  validate :l_capitalize
 
     def f_capitalize
       errors.add(:first_name, 'must be capitalized') if first_name && first_name[0] != first_name[0].upcase

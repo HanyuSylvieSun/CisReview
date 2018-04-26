@@ -40,8 +40,6 @@
   <%= @avg_workload%>
 </p>
 
-
-
 <p>
   <% if @reviews.blank? %>
   <h3> ... Well, unfortunately, CIS people are too busy to add reviews ... </h3>
@@ -58,8 +56,12 @@
       </p>
     <%end%>
   <%end%>
+</p>
 
+<div class = "btn btn-primary">
+<%= link_to 'Edit', edit_course_path(@course) %>
+</div>
 
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
+<div class = "btn btn-primary">
 <%= link_to 'Back', courses_path %>
+</div>
