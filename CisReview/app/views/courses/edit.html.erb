@@ -1,6 +1,14 @@
-<h1>Editing Course</h1>
+<div class="jumbotron">
+
+<h2>Editing Course</h2>
 
 <%= render 'form', course: @course %>
 
-<%= link_to 'Show', @course %> |
+<div class = "btn btn-default">
+<%= link_to 'Show', @course %> 
+</div>
+<div class = "btn btn-default">
 <%= link_to 'Back', courses_path %>
+</div>
+
+</div>
