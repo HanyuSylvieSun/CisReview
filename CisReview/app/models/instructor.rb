@@ -1,7 +1,7 @@
 class Instructor < ApplicationRecord
-   has_attached_file :image, styles: { medium: "300x300#"}, default_url: "/images/:style/missing.png"
+   has_attached_file :image, styles: { medium: "200x200#"}, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-	has_many :courses
+	has_many :courses, dependent: :delete_all
 	validates :first_name, presence: true
 	validates :last_name, presence: true
 
