@@ -1,3 +1,5 @@
+<div class="jumbotron">
+
 <%= form_with(model: instructor,  local: true, html: { multipart: true }) do |form| %>
   <% if instructor.errors.any? %>
     <div id="error_explanation">
@@ -30,3 +32,5 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+</div>
