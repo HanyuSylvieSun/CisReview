@@ -2,49 +2,68 @@
 
 <%= image_tag @instructor.image.url(:medium) %>
 
-<p>
+<div class = "panel-body">
+<h4>
   <strong>First name:</strong>
   <%= @instructor.first_name %>
-</p>
+</h4>
 
-<p>
+<h4>
   <strong>Last name:</strong>
   <%= @instructor.last_name %>
-</p>
+</h4>
 
-<p>
+<h4>
 	<strong>Difficulty:</strong>
 	<%=@avg_difficulty %>
-</p>
+</h4>
 
-<p>
+<h4>
 	<strong>Quality:</strong>
 	<%=@avg_quality %>
-</p>
+</h4>
 
-<p>
+<h4>
 	<strong>WorkLoad:</strong>
 	<%=@avg_workload%>
-</p>
+</h4>
+
+</div>
+<div class = "panel panel-primary">
+
+<div class = "panel-heading">
+<h3> Reviews: </h3>
+</div>
+
+<div class = "panel-body">
 
 <p>
 	<% if @reviews.blank? %>
   <h3> ... Unfortunately, this professor is probably new to Penn... </h3>
   <% else %>
     <% @reviews.each do |review| %>
-       <p> Difficulty: <%=review.difficulty%>
-           Workload: <%=review.workload%>
-           Quality: <%=review.quality%>
-           Course: <%=review.course%>
-      </p>
-      <p>
+     
+       <h4> Difficulty: <%=review.difficulty%>   
+            Workload: <%=review.workload%>  
+            Quality: <%=review.quality%>  
+            Course: <% @course =  Course.find(review.course_id) %>
+                   <%= @course.number %>
+      </h4>
+      <h4>
         <%=review.comment %>
-      </p>
+      </h4>
     <%end%>
   <%end%>
  </p>
 
-<%= link_to 'Edit', edit_instructor_path(@instructor) %> |
+</div>
+</div>
+
+<div class = "btn btn-default">
+<%= link_to 'Edit', edit_instructor_path(@instructor) %>
+</div>
+<div class = "btn btn-default">
 <%= link_to 'Back', instructors_path %>
+</div>
 
 </div>

@@ -11,7 +11,6 @@ class InstructorsController < ApplicationController
   # GET /instructors/1.json
   def show
     @reviews = Review.where(instructor_id: @instructor.id).order("created_at DESC")
-  
     if (@reviews.blank?)
       @avg_difficulty = 0
       @avg_workload = 0

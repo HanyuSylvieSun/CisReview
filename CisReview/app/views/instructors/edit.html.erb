@@ -1,11 +1,15 @@
-<div class="jumbotron">
+
+<div class = "table">
 
 <h2>Editing Instructor</h2>
 
 <%= render 'form', instructor: @instructor %>
 
-<%= link_to 'Show', @instructor %> |
+<div class = "btn btn-default">
+<%= link_to 'Show', @instructor %> 
+</div>
+<div class = "btn btn-default">
 <%= link_to 'Back', instructors_path %>
-
+</div>
 
 </div>
