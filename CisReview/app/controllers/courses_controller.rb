@@ -11,6 +11,18 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @reviews = Review.where(course_id: @course.id).order("created_at DESC")
+  
+    if (@reviews.blank?)
+      @avg_difficulty = 0
+      @avg_workload = 0
+      @avg_quality = 0
+    else
+      @avg_difficulty = @reviews.average(:difficulty).round(2)
+      @avg_workload = @reviews.average(:workload).round(2)
+      @avg_quality = @reviews.average(:quality).round(2)
+    end
+
   end
 
   # GET /courses/new

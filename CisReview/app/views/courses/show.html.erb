@@ -25,5 +25,41 @@
   <% end %>
 </p>
 
+<p>
+  <strong>Difficulty:</strong>
+  <%= @avg_difficulty%>
+</p>
+
+<p>
+  <strong>Quality:</strong>
+  <%= @avg_quality%>
+</p>
+
+<p>
+  <strong>WorkLoad:</strong>
+  <%= @avg_workload%>
+</p>
+
+
+
+<p>
+  <% if @reviews.blank? %>
+  <h3> ... Well, unfortunately, CIS people are too busy to add reviews ... </h3>
+  <%= link_to "Write the First Review!!", new_course_review_path(@course), class: "btn btn-primary" %>
+  <% else %>
+      <%= link_to "Add a Review!!", new_course_review_path(@course), class: "btn btn-primary" %>
+    <% @reviews.each do |review| %>
+       <p> Difficulty: <%=review.difficulty%>
+           Workload: <%=review.workload%>
+           Quality: <%=review.quality%>
+      </p>
+      <p>
+        <%=review.comment %>
+      </p>
+    <%end%>
+  <%end%>
+
+
+
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
