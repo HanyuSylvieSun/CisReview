@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  difficulty: 1
+  workload: 1
+  quality: 1
+  comment: MyText
+
+two:
+  difficulty: 1
+  workload: 1
+  quality: 1
+  comment: MyText
