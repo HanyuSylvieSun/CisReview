@@ -1,3 +1,5 @@
+<div class="container">
+
 <% if !user_signed_in? %>
   <div class="jumbotron">
     <h2>Welcome to CisReview!!</h2>
@@ -48,3 +50,6 @@
 </div>
 
 <%end%>
+
+<%=yield%>
+</div>

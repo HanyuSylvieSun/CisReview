@@ -1,5 +1,12 @@
+<div class="container">
+
 <h1>New Instructor</h1>
 
 <%= render 'form', instructor: @instructor %>
 
+<div class = "btn btn-default">
 <%= link_to 'Back', instructors_path %>
+</div>
+
+<%=yield%>
+</div>
